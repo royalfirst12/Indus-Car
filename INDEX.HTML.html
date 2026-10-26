@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDUS CAR INSURANCE - Premium UAE Motor Insurance</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#060d17',
+                            800: '#0a192f',
+                            700: '#112240',
+                            600: '#1d3557'
+                        },
+                        gold: {
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#d97706',
+                            600: '#b45309'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #facc15 0%, #d97706 100%);
+        }
+        .navy-gradient {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+        }
+        .floating-wa {
+            animation: pulse-wa 2s infinite;
+        }
+        @keyframes pulse-wa {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+    </style>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Top Navigation Header -->
+    <header class="sticky top-0 z-40 bg-navy-800 text-white shadow-2xl border-b border-gold-500/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="w-11 h-11 rounded-xl gold-gradient flex items-center justify-center text-navy-900 font-extrabold text-2xl shadow-lg">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-black tracking-wider text-white">INDUS <span class="text-gold-400">CAR INSURANCE</span></h1>
+                    <p class="text-[10px] sm:text-xs text-slate-300 tracking-widest uppercase font-semibold">UAE Official Motor Protection</p>
+                </div>
+            </div>
+
+            <!-- Action Buttons & Contact -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <a id="headerCallBtn" href="tel:+971500000000" class="hidden sm:flex items-center space-x-2 text-xs sm:text-sm font-semibold hover:text-gold-400 transition bg-navy-700/60 px-3 py-2 rounded-lg border border-slate-700">
+                    <i class="fa-solid fa-phone text-gold-400"></i>
+                    <span id="headerPhoneText">+971 50 000 0000</span>
+                </a>
+                
+                <a id="headerWhatsappBtn" href="https://wa.me/971500000000" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm px-3.5 py-2.5 rounded-xl flex items-center space-x-2 shadow-lg transition transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
+                    <span class="hidden md:inline">WhatsApp Direct</span>
+                </a>
+
+                <!-- Admin Access Button -->
+                <button onclick="openAdminModal()" class="bg-navy-900/80 hover:bg-navy-900 text-gold-400 border border-gold-500/40 text-xs sm:text-sm px-3 py-2.5 rounded-xl font-medium transition flex items-center space-x-1.5" title="Admin Control">
+                    <i class="fa-solid fa-lock"></i>
+                    <span class="hidden sm:inline">Admin</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <section class="navy-gradient text-white py-12 lg:py-16 relative overflow-hidden border-b border-gold-500/20">
+            <div class="absolute -right-20 -top-20 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="inline-flex items-center space-x-2 bg-gold-400/10 border border-gold-400/30 px-3 py-1.5 rounded-full text-gold-400 text-xs font-semibold uppercase tracking-wider">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Official Methaq Rates Approved</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-black leading-tight tracking-tight">
+                            Best UAE Rates for <span class="text-gold-400">Saloon, SUV & Vans</span>
+                        </h2>
+                        <p class="text-slate-300 text-xs sm:text-base max-w-2xl leading-relaxed">
+                            Instant calculation for Third-Party Liability (TPL) & Comprehensive car insurance across Dubai, Abu Dhabi, Sharjah & all Emirates.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2 text-xs sm:text-sm text-slate-300 font-medium">
+                            <span class="flex items-center space-x-2"><i class="fa-solid fa-shield-cat text-gold-400"></i> <span>Instant RTA Upload</span></span>
+                            <span class="flex items-center space-x-2"><i class="fa-solid fa-shield-cat text-gold-400"></i> <span>Transparent Rates</span></span>
+                            <span class="flex items-center space-x-2"><i class="fa-solid fa-shield-cat text-gold-400"></i> <span>Direct Agent Booking</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Rate Card Preview -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-navy-700/80 backdrop-blur-md rounded-2xl p-5 border border-gold-500/30 shadow-2xl space-y-3">
+                            <div class="flex justify-between items-center pb-2 border-b border-slate-700">
+                                <span class="text-xs font-bold text-gold-400 uppercase tracking-wider flex items-center space-x-1.5">
+                                    <i class="fa-solid fa-list-check"></i>
+                                    <span>Methaq Rates Overview (Gross AED)</span>
+                                </span>
+                                <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">RTA Approved</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <div class="bg-navy-900/60 p-2.5 rounded-lg border border-slate-800">
+                                    <div class="text-slate-400 font-medium">Saloon 4 CYL</div>
+                                    <div class="text-base font-extrabold text-gold-400" id="cardSaloon4">653.10 AED</div>
+                                </div>
+                                <div class="bg-navy-900/60 p-2.5 rounded-lg border border-slate-800">
+                                    <div class="text-slate-400 font-medium">SUV 4 CYL</div>
+                                    <div class="text-base font-extrabold text-gold-400" id="cardStation4">863.10 AED</div>
+                                </div>
+                                <div class="bg-navy-900/60 p-2.5 rounded-lg border border-slate-800">
+                                    <div class="text-slate-400 font-medium">Passenger Van</div>
+                                    <div class="text-base font-extrabold text-gold-400" id="cardPassVan">931.35 AED</div>
+                                </div>
+                                <div class="bg-navy-900/60 p-2.5 rounded-lg border border-slate-800">
+                                    <div class="text-slate-400 font-medium">Coupe / Sports 4CYL</div>
+                                    <div class="text-base font-extrabold text-gold-400" id="cardSports4">847.35 AED</div>
+                                </div>
+                            </div>
+                            <button onclick="scrollToCalculator()" class="w-full gold-gradient text-navy-900 font-extrabold py-2.5 rounded-xl shadow-lg text-xs uppercase tracking-wider hover:brightness-110 transition mt-2">
+                                Calculate Personal Rate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Calculator Section -->
+        <section id="calculatorSection" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 mb-16">
+            <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+                <div class="bg-navy-900 px-6 py-4 text-white flex justify-between items-center border-b border-gold-500/30">
+                    <h3 class="font-bold text-base sm:text-lg flex items-center space-x-2">
+                        <i class="fa-solid fa-calculator text-gold-400"></i>
+                        <span>UAE Motor Insurance Instant Calculator</span>
+                    </h3>
+                    <span class="text-[11px] bg-gold-400/20 text-gold-400 px-3 py-1 rounded-full font-bold">Methaq Rates Integrated</span>
+                </div>
+
+                <div class="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    
+                    <!-- Left Column: Input Form -->
+                    <div class="lg:col-span-7 space-y-5">
+                        
+                        <!-- Customer Personal Details -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+                            <h4 class="font-bold text-xs text-navy-800 uppercase tracking-wider flex items-center space-x-2">
+                                <i class="fa-solid fa-user-vcard text-gold-500"></i>
+                                <span>Customer Information</span>
+                            </h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name</label>
+                                    <input type="text" id="custName" placeholder="Enter your full name" class="w-full bg-white border border-slate-300 rounded-lg p-2.5 text-xs sm:text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">UAE Phone Number</label>
+                                    <input type="tel" id="custPhone" placeholder="050 123 4567" class="w-full bg-white border border-slate-300 rounded-lg p-2.5 text-xs sm:text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Policy Type Selector -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-500 tracking-wider mb-2">Coverage Type</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button type="button" id="btnTPL" onclick="setCoverage('TPL')" class="py-3 px-4 rounded-xl border-2 font-bold text-xs sm:text-sm flex flex-col items-center space-y-1 transition border-gold-500 bg-amber-50/50 text-navy-900 shadow-sm">
+                                    <span class="flex items-center space-x-2">
+                                        <i class="fa-solid fa-shield text-base"></i>
+                                        <span>Third Party (TPL)</span>
+                                    </span>
+                                    <span class="text-[10px] font-normal text-slate-500">Methaq Office Approved Rate</span>
+                                </button>
+
+                                <button type="button" id="btnComp" onclick="setCoverage('Comprehensive')" class="py-3 px-4 rounded-xl border-2 font-bold text-xs sm:text-sm flex flex-col items-center space-y-1 transition border-slate-200 text-slate-600 hover:border-slate-300">
+                                    <span class="flex items-center space-x-2">
+                                        <i class="fa-solid fa-car-shield text-base"></i>
+                                        <span>Comprehensive</span>
+                                    </span>
+                                    <span class="text-[10px] font-normal text-slate-500">Full Vehicle Protection</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Form Inputs -->
+                        <div class="space-y-4">
+                            <!-- Category / Body Type -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5">Vehicle Category (Body Type)</label>
+                                <select id="bodyCategory" onchange="handleCategoryChange()" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-xs sm:text-sm font-semibold text-navy-900 focus:ring-2 focus:ring-navy-800 focus:outline-none shadow-sm">
+                                    <option value="Saloon">Saloon (Sedan / Hatchback)</option>
+                                    <option value="Station">Station (SUV / 4x4)</option>
+                                    <option value="Passenger Van">Passenger Van</option>
+                                    <option value="Van">Commercial Cargo Van</option>
+                                    <option value="Coupe & Sports Car">Coupe & Sports Car</option>
+                                </select>
+                            </div>
+
+                            <!-- Cylinder Selection (Dynamically toggled) -->
+                            <div id="cylinderWrapper">
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5">Engine Cylinders</label>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <button type="button" id="btnCyl4" onclick="setCylinders('4CYL')" class="py-2.5 border-2 rounded-lg text-xs font-bold border-gold-500 bg-gold-50 text-navy-900">
+                                        4 Cylinders
+                                    </button>
+                                    <button type="button" id="btnCyl6" onclick="setCylinders('6CYL')" class="py-2.5 border-2 rounded-lg text-xs font-bold border-slate-200 text-slate-600 hover:border-slate-300">
+                                        6 Cylinders
+                                    </button>
+                                    <button type="button" id="btnCyl8" onclick="setCylinders('8CYL')" class="py-2.5 border-2 rounded-lg text-xs font-bold border-slate-200 text-slate-600 hover:border-slate-300">
+                                        8 Cylinders
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <!-- Model Year -->
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">Model Year</label>
+                                    <select id="modelYear" onchange="calculateQuote()" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs sm:text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none">
+                                        <!-- Filled dynamically -->
+                                    </select>
+                                </div>
+
+                                <!-- Driver License Age / Experience -->
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">UAE Driving License Experience</label>
+                                    <select id="experience" onchange="calculateQuote()" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs sm:text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none">
+                                        <option value="above1">1 Year or Above (Standard Rate)</option>
+                                        <option value="below1">New License (Less than 1 Year)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Vehicle Value Slider (For Comprehensive) -->
+                            <div id="vehicleValueContainer" class="hidden space-y-1">
+                                <div class="flex justify-between items-center">
+                                    <label class="block text-xs font-semibold text-slate-700">Estimated Vehicle Value (AED)</label>
+                                    <span id="carValueDisplay" class="text-xs sm:text-sm font-bold text-navy-800">50,000 AED</span>
+                                </div>
+                                <input type="range" id="carValue" min="10000" max="400000" step="5000" value="50000" oninput="calculateQuote()" class="w-full accent-gold-500 cursor-pointer">
+                                <div class="flex justify-between text-[10px] text-slate-400">
+                                    <span>10,000 AED</span>
+                                    <span>200,000 AED</span>
+                                    <span>400,000 AED+</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Premium Summary & Action -->
+                    <div class="lg:col-span-5 flex flex-col justify-between bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-inner">
+                        <div>
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                                <div>
+                                    <h4 class="font-bold text-navy-900 text-base">Quote Summary</h4>
+                                    <p class="text-xs text-slate-500" id="selectedCoverageLabel">TPL - Methaq Office Rate</p>
+                                </div>
+                                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full border border-emerald-300">RTA Compatible</span>
+                            </div>
+
+                            <div class="py-4 space-y-3 text-xs sm:text-sm">
+                                <div class="flex justify-between text-slate-600">
+                                    <span>Selected Vehicle</span>
+                                    <span id="summaryVehicleType" class="font-semibold text-slate-800">Saloon (4CYL)</span>
+                                </div>
+
+                                <!-- Standard Display for Existing Driver -->
+                                <div id="standardPriceBlock" class="space-y-3">
+                                    <div class="flex justify-between text-slate-600">
+                                        <span>Methaq Base Rate</span>
+                                        <span id="summaryGross" class="font-bold text-slate-900">653.10 AED</span>
+                                    </div>
+
+                                    <div class="pt-3 border-t border-slate-200 flex justify-between items-baseline">
+                                        <div>
+                                            <span class="text-base font-black text-navy-900 block">Total Premium</span>
+                                            <span class="text-[10px] text-slate-400">Net Gross AED Rate</span>
+                                        </div>
+                                        <div class="text-right">
+                                            <span id="summaryTotalAED" class="text-3xl font-black text-navy-900">653.10</span>
+                                            <span class="text-xs font-bold text-gold-600">AED</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- New License Special Block -->
+                                <div id="newLicenseBlock" class="hidden bg-amber-50 border border-amber-300 rounded-xl p-4 text-center space-y-2">
+                                    <div class="text-amber-700 font-extrabold text-sm flex items-center justify-center space-x-1.5">
+                                        <i class="fa-solid fa-user-clock text-base"></i>
+                                        <span>On Account / Underwriting Quote</span>
+                                    </div>
+                                    <p class="text-slate-600 text-xs leading-relaxed">
+                                        Drivers with a new license (&lt; 1 year) require individual underwriting clearance. Rate is evaluated on account.
+                                    </p>
+                                    <div class="text-navy-900 font-bold text-xs bg-white py-1.5 rounded-lg border border-amber-200 shadow-sm">
+                                        Click WhatsApp below to get manual quote
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Policy Benefits Checklist -->
+                            <div class="bg-white rounded-xl p-3 border border-slate-200 space-y-1.5 text-xs text-slate-600 shadow-sm">
+                                <div class="font-bold text-navy-800 text-[11px] uppercase tracking-wider mb-1">Included Benefits:</div>
+                                <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>Direct RTA Portal Upload</span></div>
+                                <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>24/7 Roadside Assistance</span></div>
+                                <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>Instant WhatsApp Policy Issue</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <div class="pt-6 space-y-2">
+                            <button onclick="sendWhatsAppQuote()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3.5 px-4 rounded-xl shadow-xl flex items-center justify-center space-x-2 transition transform hover:-translate-y-0.5">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Send Details on WhatsApp</span>
+                            </button>
+                            <p class="text-[10px] text-center text-slate-400">Directly opens agent's WhatsApp chat with formatted request.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Methaq Exact Rate Matrix Reference Chart -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+                <div class="bg-navy-800 text-white p-4 px-6 flex justify-between items-center border-b border-gold-500/30">
+                    <div class="flex items-center space-x-3">
+                        <i class="fa-solid fa-table-cells text-gold-400 text-xl"></i>
+                        <div>
+                            <h3 class="font-bold text-base">Methaq Takaful UAE Standard Gross Rate Chart</h3>
+                            <p class="text-[11px] text-slate-300">Official Gross Rates in AED</p>
+                        </div>
+                    </div>
+                    <span class="text-xs bg-gold-400 text-navy-900 px-3 py-1 rounded-full font-bold">Standard Rates</span>
+                </div>
+
+                <div class="p-4 sm:p-6 overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                        <thead>
+                            <tr class="bg-slate-100 border-b border-slate-300 text-navy-900">
+                                <th class="p-3 font-bold uppercase">Vehicle Category</th>
+                                <th class="p-3 font-bold uppercase">Cylinders / Spec</th>
+                                <th class="p-3 font-bold uppercase text-right">Gross Rates (AED)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <!-- Saloon -->
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-3 font-bold text-navy-900 flex items-center space-x-2">
+                                    <i class="fa-solid fa-car text-slate-400"></i>
+                                    <span>Saloon (Sedan / Hatchback)</span>
+                                </td>
+                                <td class="p-3 text-slate-600">4CYL / 6CYL / 8CYL</td>
+                                <td class="p-3 font-bold text-right text-navy-900">653.10 / 737.10 / 821.10 AED</td>
+                            </tr>
+                            <!-- Station -->
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-3 font-bold text-navy-900 flex items-center space-x-2">
+                                    <i class="fa-solid fa-truck-pickup text-slate-400"></i>
+                                    <span>Station (SUV / 4x4)</span>
+                                </td>
+                                <td class="p-3 text-slate-600">4CYL / 6CYL / 8CYL</td>
+                                <td class="p-3 font-bold text-right text-navy-900">863.10 / 905.10 / 947.10 AED</td>
+                            </tr>
+                            <!-- Passenger Van -->
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-3 font-bold text-navy-900 flex items-center space-x-2">
+                                    <i class="fa-solid fa-van-shuttle text-slate-400"></i>
+                                    <span>Passenger Van</span>
+                                </td>
+                                <td class="p-3 text-slate-600">Standard Flat Rate</td>
+                                <td class="p-3 font-bold text-right text-navy-900">931.35 AED</td>
+                            </tr>
+                            <!-- Commercial Van -->
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-3 font-bold text-navy-900 flex items-center space-x-2">
+                                    <i class="fa-solid fa-truck-ram text-slate-400"></i>
+                                    <span>Commercial Cargo Van</span>
+                                </td>
+                                <td class="p-3 text-slate-600">Standard Flat Rate</td>
+                                <td class="p-3 font-bold text-right text-navy-900">847.35 AED</td>
+                            </tr>
+                            <!-- Coupe & Sports -->
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-3 font-bold text-navy-900 flex items-center space-x-2">
+                                    <i class="fa-solid fa-gauge-high text-slate-400"></i>
+                                    <span>Coupe & Sports Car</span>
+                                </td>
+                                <td class="p-3 text-slate-600">4CYL / 6CYL / 8CYL</td>
+                                <td class="p-3 font-bold text-right text-navy-900">847.35 / 952.35 / 1057.35 AED</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Feedback & Rating Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Feedback Submission Form -->
+                <div class="lg:col-span-5 bg-white p-6 rounded-2xl shadow-xl border border-slate-200 space-y-4">
+                    <div class="border-b border-slate-200 pb-3">
+                        <h3 class="font-bold text-lg text-navy-900 flex items-center space-x-2">
+                            <i class="fa-solid fa-comment-dots text-gold-500"></i>
+                            <span>Leave Customer Feedback</span>
+                        </h3>
+                        <p class="text-xs text-slate-500">Rate our service and help UAE drivers choose the best coverage.</p>
+                    </div>
+
+                    <form id="feedbackForm" onsubmit="submitFeedback(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Your Name</label>
+                            <input type="text" id="fbName" required placeholder="e.g. Ahmed Al-Maktoum" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs sm:text-sm focus:ring-2 focus:ring-navy-800">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Star Rating</label>
+                            <div class="flex items-center space-x-2 text-2xl text-amber-400 cursor-pointer" id="starRatingContainer">
+                                <i class="fa-solid fa-star star-btn" data-rating="1" onclick="setStarRating(1)"></i>
+                                <i class="fa-solid fa-star star-btn" data-rating="2" onclick="setStarRating(2)"></i>
+                                <i class="fa-solid fa-star star-btn" data-rating="3" onclick="setStarRating(3)"></i>
+                                <i class="fa-solid fa-star star-btn" data-rating="4" onclick="setStarRating(4)"></i>
+                                <i class="fa-solid fa-star star-btn" data-rating="5" onclick="setStarRating(5)"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Your Review</label>
+                            <textarea id="fbComment" required rows="3" placeholder="Quick and easy insurance issuance..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs sm:text-sm focus:ring-2 focus:ring-navy-800"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full navy-gradient text-white font-bold py-3 rounded-xl shadow-lg hover:opacity-95 transition text-xs sm:text-sm uppercase tracking-wider">
+                            Submit Feedback
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Feedbacks Display List -->
+                <div class="lg:col-span-7 bg-white p-6 rounded-2xl shadow-xl border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center border-b border-slate-200 pb-3 mb-4">
+                            <h3 class="font-bold text-lg text-navy-900">Recent UAE Client Reviews</h3>
+                            <span class="text-xs text-slate-500"><i class="fa-solid fa-star text-amber-400"></i> 4.9 / 5 Overall Rating</span>
+                        </div>
+
+                        <div id="feedbackList" class="space-y-4 max-h-[320px] overflow-y-auto pr-1">
+                            <!-- Dynamic Feedback Items Inserted Here -->
+                        </div>
+                    </div>
+
+                    <div class="pt-4 text-center border-t border-slate-100 text-xs text-slate-400">
+                        Verified Reviews from Dubai & Abu Dhabi Motorists
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-slate-400 text-xs py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+            <div class="flex justify-center items-center space-x-2 text-white font-bold text-base">
+                <i class="fa-solid fa-shield-halved text-gold-400"></i>
+                <span>INDUS CAR INSURANCE UAE</span>
+            </div>
+            <p>© <span id="year"></span> INDUS Insurance Services. Authorized Sales Agent for Methaq Takaful.</p>
+            <p class="text-[10px] text-slate-500 max-w-2xl mx-auto">Disclaimer: Insurance quotes generated follow Methaq Takaful official rates. Final policy approval and document verification subject to insurance company underwriting guidelines.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a id="floatingWaBtn" href="https://wa.me/971500000000" target="_blank" class="floating-wa fixed bottom-6 right-6 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 hover:bg-emerald-400 transition" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ADMIN SETTINGS MODAL -->
+    <div id="adminModal" class="fixed inset-0 bg-navy-900/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden border border-slate-200">
+            
+            <!-- Modal Header -->
+            <div class="bg-navy-800 text-white p-4 px-6 flex justify-between items-center border-b border-gold-500/30">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-user-gear text-gold-400"></i>
+                    <h3 class="font-bold text-base">Admin Control Panel</h3>
+                </div>
+                <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Passcode Gate -->
+            <div id="adminPasscodeGate" class="p-6 space-y-4">
+                <p class="text-xs text-slate-600">Enter Admin Passcode to adjust rate parameters & contact options:</p>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Admin Password</label>
+                    <input type="password" id="inputPasscode" placeholder="Enter password" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-navy-800">
+                </div>
+                <div id="passcodeError" class="text-xs text-red-500 font-semibold hidden">Incorrect Password!</div>
+                <button onclick="verifyPasscode()" class="w-full navy-gradient text-white font-bold py-3 rounded-lg shadow text-sm">
+                    Unlock Panel
+                </button>
+            </div>
+
+            <!-- Admin Settings Form -->
+            <div id="adminFormContent" class="p-6 space-y-4 hidden max-h-[75vh] overflow-y-auto">
+                
+                <!-- Phone Setting -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp Sales Phone Number (No + or spaces)</label>
+                    <input type="text" id="adminPhone" placeholder="971500000000" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-sm font-mono">
+                </div>
+
+                <!-- Saloon Rates -->
+                <div class="border-t border-slate-200 pt-3">
+                    <h4 class="font-bold text-xs text-navy-800 uppercase tracking-wider mb-2">Saloon Rates (AED)</h4>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div>
+                            <label class="block text-[10px] text-slate-600">4CYL</label>
+                            <input type="number" step="0.01" id="admSaloon4" class="w-full border p-1.5 rounded text-xs text-center font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] text-slate-600">6CYL</label>
+                            <input type="number" step="0.01" id="admSaloon6" class="w-full border p-1.5 rounded text-xs text-center font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] text-slate-600">8CYL</label>
+                            <input type="number" step="0.01" id="admSaloon8" class="w-full border p-1.5 rounded text-xs text-center font-bold">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Station SUV Rates -->
+                <div class="border-t border-slate-200 pt-3">
+                    <h4 class="font-bold text-xs text-navy-800 uppercase tracking-wider mb-2">Station / SUV Rates (AED)</h4>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div>
+                            <label class="block text-[10px] text-slate-600">4CYL</label>
+                            <input type="number" step="0.01" id="admStation4" class="w-full border p-1.5 rounded text-xs text-center font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] text-slate-600">6CYL</label>
+                            <input type="number" step="0.01" id="admStation6" class="w-full border p-1.5 rounded text-xs text-center font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] text-slate-600">8CYL</label>
+                            <input type="number" step="0.01" id="admStation8" class="w-full border p-1.5 rounded text-xs text-center font-bold">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vans -->
+                <div class="border-t border-slate-200 pt-3">
+                    <h4 class="font-bold text-xs text-navy-800 uppercase tracking-wider mb-2">Van Rates (AED)</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block text-[10px] text-slate-600">Passenger Van</label>
+                            <input type="number" step="0.01" id="admPassVan" class="w-full border p-1.5 rounded text-xs text-center font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] text-slate-600">Commercial Cargo Van</label>
+                            <input type="number" step="0.01" id="admCommVan" class="w-full border p-1.5 rounded text-xs text-center font-bold">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sports Car -->
+                <div class="border-t border-slate-200 pt-3">
+                    <h4 class="font-bold text-xs text-navy-800 uppercase tracking-wider mb-2">Coupe & Sports Car Rates (AED)</h4>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div>
+                            <label class="block text-[10px] text-slate-600">4CYL</label>
+                            <input type="number" step="0.01" id="admSports4" class="w-full border p-1.5 rounded text-xs text-center font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] text-slate-600">6CYL</label>
+                            <input type="number" step="0.01" id="admSports6" class="w-full border p-1.5 rounded text-xs text-center font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] text-slate-600">8CYL</label>
+                            <input type="number" step="0.01" id="admSports8" class="w-full border p-1.5 rounded text-xs text-center font-bold">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="pt-4 flex space-x-2">
+                    <button onclick="saveAdminSettings()" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-lg shadow text-xs">
+                        Save Changes
+                    </button>
+                    <button onclick="resetDefaultSettings()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-medium px-4 py-2.5 rounded-lg text-xs">
+                        Reset Defaults
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 left-5 bg-navy-900 text-white text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-2 border border-gold-500/40 hidden z-50">
+        <i class="fa-solid fa-circle-check text-gold-400 text-base"></i>
+        <span id="toastMsg">Saved successfully!</span>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        const ADMIN_PASSCODE = 'Indus insurance';
+
+        const defaultConfig = {
+            phone: '971500000000',
+            rates: {
+                Saloon: { '4CYL': 653.10, '6CYL': 737.10, '8CYL': 821.10 },
+                Station: { '4CYL': 863.10, '6CYL': 905.10, '8CYL': 947.10 },
+                'Passenger Van': 931.35,
+                'Van': 847.35,
+                'Coupe & Sports Car': { '4CYL': 847.35, '6CYL': 952.35, '8CYL': 1057.35 }
+            },
+            compRatePercent: 1.5,
+            compMin: 1100
+        };
+
+        let appConfig = JSON.parse(JSON.stringify(defaultConfig));
+        let currentCoverage = 'TPL';
+        let selectedCylinder = '4CYL';
+        let calculatedGross = 653.10;
+        let isNewLicense = false;
+        let selectedStarRating = 5;
+
+        let feedbacks = [
+            { name: "Tariq Mahmood", rating: 5, comment: "Super fast processing! Saloon insurance uploaded to RTA within 15 mins." },
+            { name: "Johnathan Smith", rating: 5, comment: "Exact Methaq rate applied for my SUV. 905.10 AED gross price as promised." },
+            { name: "Muhammad Rashid", rating: 4, comment: "Great WhatsApp customer support for vehicle registration." }
+        ];
+
+        window.onload = function() {
+            document.getElementById('year').innerText = new Date().getFullYear();
+            populateYears();
+            loadSettings();
+            renderFeedbacks();
+            setStarRating(5);
+            handleCategoryChange();
+        };
+
+        function populateYears() {
+            const yearSelect = document.getElementById('modelYear');
+            const currentYear = new Date().getFullYear();
+            for (let y = currentYear + 1; y >= currentYear - 15; y--) {
+                const opt = document.createElement('option');
+                opt.value = y;
+                opt.innerText = y;
+                yearSelect.appendChild(opt);
+            }
+        }
+
+        function loadSettings() {
+            const stored = localStorage.getItem('indus_insurance_methaq_config');
+            if (stored) {
+                try {
+                    appConfig = JSON.parse(stored);
+                } catch(e) {
+                    appConfig = JSON.parse(JSON.stringify(defaultConfig));
+                }
+            }
+            updateHeaderContact();
+            updateHighlightCards();
+        }
+
+        function updateHeaderContact() {
+            const phoneStr = appConfig.phone;
+            document.getElementById('headerPhoneText').innerText = '+' + phoneStr;
+            document.getElementById('headerCallBtn').href = 'tel:' + phoneStr;
+            document.getElementById('headerWhatsappBtn').href = 'https://wa.me/' + phoneStr;
+            document.getElementById('floatingWaBtn').href = 'https://wa.me/' + phoneStr;
+        }
+
+        function updateHighlightCards() {
+            document.getElementById('cardSaloon4').innerText = (appConfig.rates.Saloon['4CYL'] || 653.10) + ' AED';
+            document.getElementById('cardStation4').innerText = (appConfig.rates.Station['4CYL'] || 863.10) + ' AED';
+            document.getElementById('cardPassVan').innerText = (appConfig.rates['Passenger Van'] || 931.35) + ' AED';
+            document.getElementById('cardSports4').innerText = (appConfig.rates['Coupe & Sports Car']['4CYL'] || 847.35) + ' AED';
+        }
+
+        function setCoverage(type) {
+            currentCoverage = type;
+            const btnTPL = document.getElementById('btnTPL');
+            const btnComp = document.getElementById('btnComp');
+            const valContainer = document.getElementById('vehicleValueContainer');
+
+            if (type === 'TPL') {
+                btnTPL.className = 'py-3 px-4 rounded-xl border-2 font-bold text-xs sm:text-sm flex flex-col items-center space-y-1 transition border-gold-500 bg-amber-50/50 text-navy-900 shadow-sm';
+                btnComp.className = 'py-3 px-4 rounded-xl border-2 font-bold text-xs sm:text-sm flex flex-col items-center space-y-1 transition border-slate-200 text-slate-600 hover:border-slate-300';
+                document.getElementById('selectedCoverageLabel').innerText = 'TPL - Methaq Office Rate';
+                valContainer.classList.add('hidden');
+            } else {
+                btnComp.className = 'py-3 px-4 rounded-xl border-2 font-bold text-xs sm:text-sm flex flex-col items-center space-y-1 transition border-gold-500 bg-amber-50/50 text-navy-900 shadow-sm';
+                btnTPL.className = 'py-3 px-4 rounded-xl border-2 font-bold text-xs sm:text-sm flex flex-col items-center space-y-1 transition border-slate-200 text-slate-600 hover:border-slate-300';
+                document.getElementById('selectedCoverageLabel').innerText = 'Comprehensive Protection';
+                valContainer.classList.remove('hidden');
+            }
+            calculateQuote();
+        }
+
+        function handleCategoryChange() {
+            const cat = document.getElementById('bodyCategory').value;
+            const cylWrapper = document.getElementById('cylinderWrapper');
+
+            if (cat === 'Passenger Van' || cat === 'Van') {
+                cylWrapper.classList.add('hidden');
+            } else {
+                cylWrapper.classList.remove('hidden');
+            }
+            calculateQuote();
+        }
+
+        function setCylinders(cyl) {
+            selectedCylinder = cyl;
+            const btn4 = document.getElementById('btnCyl4');
+            const btn6 = document.getElementById('btnCyl6');
+            const btn8 = document.getElementById('btnCyl8');
+
+            const activeClass = 'py-2.5 border-2 rounded-lg text-xs font-bold border-gold-500 bg-gold-50 text-navy-900';
+            const inactiveClass = 'py-2.5 border-2 rounded-lg text-xs font-bold border-slate-200 text-slate-600 hover:border-slate-300';
+
+            btn4.className = cyl === '4CYL' ? activeClass : inactiveClass;
+            btn6.className = cyl === '6CYL' ? activeClass : inactiveClass;
+            btn8.className = cyl === '8CYL' ? activeClass : inactiveClass;
+
+            calculateQuote();
+        }
+
+        function calculateQuote() {
+            const category = document.getElementById('bodyCategory').value;
+            const exp = document.getElementById('experience').value;
+            const carVal = parseFloat(document.getElementById('carValue').value);
+            document.getElementById('carValueDisplay').innerText = carVal.toLocaleString('en-US') + ' AED';
+
+            isNewLicense = (exp === 'below1');
+            const standardBlock = document.getElementById('standardPriceBlock');
+            const newLicBlock = document.getElementById('newLicenseBlock');
+
+            if (isNewLicense) {
+                standardBlock.classList.add('hidden');
+                newLicBlock.classList.remove('hidden');
+            } else {
+                standardBlock.classList.remove('hidden');
+                newLicBlock.classList.add('hidden');
+            }
+
+            let baseGross = 0;
+            let vehicleLabel = category;
+
+            if (currentCoverage === 'TPL') {
+                if (category === 'Passenger Van') {
+                    baseGross = parseFloat(appConfig.rates['Passenger Van']);
+                    vehicleLabel = 'Passenger Van (Flat Rate)';
+                } else if (category === 'Van') {
+                    baseGross = parseFloat(appConfig.rates['Van']);
+                    vehicleLabel = 'Commercial Van (Flat Rate)';
+                } else {
+                    baseGross = parseFloat(appConfig.rates[category][selectedCylinder]);
+                    vehicleLabel = `${category} (${selectedCylinder})`;
+                }
+            } else {
+                let calcVal = carVal * (appConfig.compRatePercent / 100);
+                baseGross = Math.max(calcVal, appConfig.compMin);
+                vehicleLabel = `${category} - Comp (Val: ${carVal.toLocaleString()} AED)`;
+            }
+
+            calculatedGross = baseGross;
+
+            document.getElementById('summaryVehicleType').innerText = vehicleLabel;
+            document.getElementById('summaryGross').innerText = baseGross.toFixed(2) + ' AED';
+            document.getElementById('summaryTotalAED').innerText = calculatedGross.toFixed(2);
+        }
+
+        function sendWhatsAppQuote() {
+            const name = document.getElementById('custName').value.trim() || 'Valued Customer';
+            const phone = document.getElementById('custPhone').value.trim() || 'N/A';
+            const category = document.getElementById('bodyCategory').value;
+            const year = document.getElementById('modelYear').value;
+            const expText = document.getElementById('experience').options[document.getElementById('experience').selectedIndex].text;
+
+            let cylInfo = (category === 'Passenger Van' || category === 'Van') ? 'Flat Rate Category' : selectedCylinder;
+            let priceText = isNewLicense ? "*ON ACCOUNT / UNDERWRITING APPROVAL REQUIRED*" : `*${calculatedGross.toFixed(2)} AED*`;
+
+            const text = 
+`*INDUS CAR INSURANCE - OFFICIAL QUOTE REQUEST*
+---------------------------------------
+👤 *Customer Name:* ${name}
+📞 *Contact Number:* ${phone}
+---------------------------------------
+🚗 *Coverage Type:* ${currentCoverage}
+🏎️ *Vehicle Category:* ${category}
+⚙️ *Engine Cylinders:* ${cylInfo}
+📅 *Model Year:* ${year}
+🆔 *UAE License:* ${expText}
+---------------------------------------
+💰 *Gross Premium Status:* ${priceText}
+---------------------------------------
+Hello Indus Insurance, please contact me for policy issuance.`;
+
+            const encoded = encodeURIComponent(text);
+            window.open(`https://wa.me/${appConfig.phone}?text=${encoded}`, '_blank');
+        }
+
+        function scrollToCalculator() {
+            document.getElementById('calculatorSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Feedback Logic
+        function setStarRating(rating) {
+            selectedStarRating = rating;
+            const stars = document.querySelectorAll('#starRatingContainer .star-btn');
+            stars.forEach((s, idx) => {
+                if (idx < rating) {
+                    s.classList.remove('fa-regular', 'text-slate-300');
+                    s.classList.add('fa-solid', 'text-amber-400');
+                } else {
+                    s.classList.remove('fa-solid', 'text-amber-400');
+                    s.classList.add('fa-regular', 'text-slate-300');
+                }
+            });
+        }
+
+        function submitFeedback(e) {
+            e.preventDefault();
+            const name = document.getElementById('fbName').value.trim();
+            const comment = document.getElementById('fbComment').value.trim();
+
+            if (name && comment) {
+                feedbacks.unshift({ name, rating: selectedStarRating, comment });
+                renderFeedbacks();
+                document.getElementById('feedbackForm').reset();
+                setStarRating(5);
+                showToast('Thank you for your feedback!');
+            }
+        }
+
+        function renderFeedbacks() {
+            const list = document.getElementById('feedbackList');
+            list.innerHTML = '';
+            feedbacks.forEach(f => {
+                let starsHtml = '';
+                for (let i = 0; i < 5; i++) {
+                    starsHtml += i < f.rating ? '<i class="fa-solid fa-star text-amber-400"></i>' : '<i class="fa-regular fa-star text-slate-300"></i>';
+                }
+                const div = document.createElement('div');
+                div.className = 'p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1.5';
+                div.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-navy-900">${f.name}</span>
+                        <div class="flex items-center space-x-1 text-xs">${starsHtml}</div>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed">${f.comment}</p>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        // Admin Modal Functions
+        function openAdminModal() {
+            document.getElementById('adminModal').classList.remove('hidden');
+            document.getElementById('adminPasscodeGate').classList.remove('hidden');
+            document.getElementById('adminFormContent').classList.add('hidden');
+            document.getElementById('inputPasscode').value = '';
+            document.getElementById('passcodeError').classList.add('hidden');
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.add('hidden');
+        }
+
+        function verifyPasscode() {
+            if (document.getElementById('inputPasscode').value === ADMIN_PASSCODE) {
+                document.getElementById('adminPasscodeGate').classList.add('hidden');
+                document.getElementById('adminFormContent').classList.remove('hidden');
+                fillAdminFields();
+            } else {
+                document.getElementById('passcodeError').classList.remove('hidden');
+            }
+        }
+
+        function fillAdminFields() {
+            document.getElementById('adminPhone').value = appConfig.phone;
+            document.getElementById('admSaloon4').value = appConfig.rates.Saloon['4CYL'];
+            document.getElementById('admSaloon6').value = appConfig.rates.Saloon['6CYL'];
+            document.getElementById('admSaloon8').value = appConfig.rates.Saloon['8CYL'];
+
+            document.getElementById('admStation4').value = appConfig.rates.Station['4CYL'];
+            document.getElementById('admStation6').value = appConfig.rates.Station['6CYL'];
+            document.getElementById('admStation8').value = appConfig.rates.Station['8CYL'];
+
+            document.getElementById('admPassVan').value = appConfig.rates['Passenger Van'];
+            document.getElementById('admCommVan').value = appConfig.rates['Van'];
+
+            document.getElementById('admSports4').value = appConfig.rates['Coupe & Sports Car']['4CYL'];
+            document.getElementById('admSports6').value = appConfig.rates['Coupe & Sports Car']['6CYL'];
+            document.getElementById('admSports8').value = appConfig.rates['Coupe & Sports Car']['8CYL'];
+        }
+
+        function saveAdminSettings() {
+            appConfig.phone = document.getElementById('adminPhone').value.trim() || defaultConfig.phone;
+            
+            appConfig.rates.Saloon['4CYL'] = parseFloat(document.getElementById('admSaloon4').value) || 653.10;
+            appConfig.rates.Saloon['6CYL'] = parseFloat(document.getElementById('admSaloon6').value) || 737.10;
+            appConfig.rates.Saloon['8CYL'] = parseFloat(document.getElementById('admSaloon8').value) || 821.10;
+
+            appConfig.rates.Station['4CYL'] = parseFloat(document.getElementById('admStation4').value) || 863.10;
+            appConfig.rates.Station['6CYL'] = parseFloat(document.getElementById('admStation6').value) || 905.10;
+            appConfig.rates.Station['8CYL'] = parseFloat(document.getElementById('admStation8').value) || 947.10;
+
+            appConfig.rates['Passenger Van'] = parseFloat(document.getElementById('admPassVan').value) || 931.35;
+            appConfig.rates['Van'] = parseFloat(document.getElementById('admCommVan').value) || 847.35;
+
+            appConfig.rates['Coupe & Sports Car']['4CYL'] = parseFloat(document.getElementById('admSports4').value) || 847.35;
+            appConfig.rates['Coupe & Sports Car']['6CYL'] = parseFloat(document.getElementById('admSports6').value) || 952.35;
+            appConfig.rates['Coupe & Sports Car']['8CYL'] = parseFloat(document.getElementById('admSports8').value) || 1057.35;
+
+            localStorage.setItem('indus_insurance_methaq_config', JSON.stringify(appConfig));
+            updateHeaderContact();
+            updateHighlightCards();
+            calculateQuote();
+            closeAdminModal();
+            showToast('Admin changes saved!');
+        }
+
+        function resetDefaultSettings() {
+            appConfig = JSON.parse(JSON.stringify(defaultConfig));
+            localStorage.setItem('indus_insurance_methaq_config', JSON.stringify(appConfig));
+            fillAdminFields();
+            updateHeaderContact();
+            updateHighlightCards();
+            calculateQuote();
+            showToast('Rates reset to Methaq defaults!');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3000);
+        }
+    </script>
+</body>
+</html>
